@@ -60,10 +60,10 @@ impl X11_FG {
 
     #[export]
     fn get_window_geometry(&self, _owner: &Node, gw2_id: i32) -> (u16, u16){
-        let mut dpy = DisplayConnection::create(None, None).unwrap();
-        let window = Window::const_from_xid(gw2_id as u32);
-        let geometry = window.geometry_immediate(&mut dpy).unwrap();
-        return (geometry.width, geometry.height)
+        //let mut dpy = DisplayConnection::create(None, None).unwrap();
+        //let window = Window::const_from_xid(gw2_id as u32);
+        //let geometry = window.geometry_immediate(&mut dpy).unwrap();
+        return (1440, 873)
     }
 
 }

@@ -305,7 +305,10 @@ func decode_context_packet(spb: StreamPeerBuffer):
 
 	OS.window_size = size
 	var identity_length: int = spb.get_32()
-	var identity_str = spb.get_utf8_string(identity_length)
+	print("id length ", identity_length)
+	var identity_bytes = spb.get_data(identity_length)
+	var identity_str = "{\"fov\": 1.22}"
+	print("identity_str: ", identity_str)
 	var identity = JSON.parse(identity_str).result
 
 	# FOV Calculations
